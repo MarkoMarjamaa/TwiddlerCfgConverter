@@ -15,7 +15,7 @@ powershell -file TwiddlerCfg2Text.ps1 twiddler_default.cfg twiddler_default.text
 
 Text file format: 
 
-# 
+\# 
 Starts a comment
 
 Single key: 
