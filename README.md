@@ -1,13 +1,13 @@
 # TwiddlerCfgConverter
 Converts Twiddler3 keyboard configuration files to human readable format and vice versa
 
-Faster to create new configurations( from existing ones)
+- Faster to create new configurations( from existing ones)
 
-Allows using international charactersets and keyboards
+- Allows using international charactersets and keyboards
 
-Allows writing comments about design decisions. 
+- Allows writing comments about design decisions. 
 
-Allows making groups of similar chord combinations for easier learning
+- Allows making groups of similar chord combinations for easier learning
 
 Convert Twiddler3 cfg to text file 
 powershell -file TwiddlerCfg2Text.ps1 inputfilename outputfilename [HID file name]
@@ -15,6 +15,9 @@ powershell -file TwiddlerCfg2Text.ps1 inputfilename outputfilename [HID file nam
 Examples:
 powershell -file TwiddlerCfg2Text.ps1 twiddler_default.cfg twiddler_default.text.cfg
 powershell -file TwiddlerCfg2Text.ps1 twiddler_default.cfg twiddler_default.text.cfg Us.hid.txt
+
+Convert Twiddler3 text file to cfg file 
+powershell -file TwiddlerText2Cfg.ps1 inputfilename outputfilename
 
 Text file format: 
 
@@ -37,4 +40,4 @@ Example:
 Shown characters are fetched from HID key map file. Default file is Us.hid.txt.
 Shown characters are only for visualisation, the actual conversion from text file to cfg file is done with hid_modifier&key values. 
 HID key map file can be Unicode and output file is always Unicode. 
-
+Config file creator adds MouseMap from default Twiddler configuration ( Twiddler3 does not use mousemap) 
