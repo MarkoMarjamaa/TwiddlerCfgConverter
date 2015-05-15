@@ -13,10 +13,13 @@ Convert Twiddler3 cfg to text file
 powershell -file TwiddlerCfg2Text.ps1 inputfilename outputfilename [HID file name]
 
 Examples:
+
 powershell -file TwiddlerCfg2Text.ps1 twiddler_default.cfg twiddler_default.text.cfg
+
 powershell -file TwiddlerCfg2Text.ps1 twiddler_default.cfg twiddler_default.text.cfg Us.hid.txt
 
 Convert Twiddler3 text file to cfg file 
+
 powershell -file TwiddlerText2Cfg.ps1 inputfilename outputfilename
 
 Text file format: 
