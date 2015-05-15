@@ -28,6 +28,10 @@ Text file format:
 
 \# Starts a comment
 
+Chord descriptions start with line:
+
+-- Chords --
+
 Single key: 
 
 modifier chords hid_modifier&key character
