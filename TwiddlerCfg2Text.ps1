@@ -58,6 +58,15 @@ $Options = $InputFile[15]
 Add-Content -Path $OutputFilename -Encoding UTF8 "#Options : $($Options)"
 $CrrntKeyOffset = 16
 
+# Read Mouse table 
+#$CrrntKeyOffset = $MouseChordMapOffset
+#while ( $InputFile[$CrrntKeyOffset] -ne 0 -or $InputFile[$CrrntKeyOffset+1] -ne 0 -or $InputFile[$CrrntKeyOffset+2] -ne 0 ){
+#
+#	Write-Output "($($InputFile[$CrrntKeyOffset]),$($InputFile[$CrrntKeyOffset+1]),$($InputFile[$CrrntKeyOffset+2])"
+#	$CrrntKeyOffset += 3
+#}
+
+
 # Read string table 
 $StringMap = @{}
 $StringKeyMap = @{}
@@ -90,7 +99,9 @@ while ( $InputFile[$StringTablePointer] -ne 0 -or $InputFile[$StringTablePointer
 	$CrrntString += 1
 }
 
+Add-Content -Path $OutputFilename -Encoding UTF8 "-- Chords --"
 # Read chords
+$CrrntKeyOffset = 16
 while ( $InputFile[$CrrntKeyOffset] -ne 0 -or $InputFile[$CrrntKeyOffset+1] -ne 0 -or $InputFile[$CrrntKeyOffset+2] -ne 0 -or $InputFile[$CrrntKeyOffset+3] -ne 0  ){
 
 $Chord = $InputFile[$CrrntKeyOffset] + 256*$InputFile[$CrrntKeyOffset+1]
@@ -121,3 +132,4 @@ if( $Modifier -eq 255 ){
 	}
 	$CrrntKeyOffset += 4
 }
+
