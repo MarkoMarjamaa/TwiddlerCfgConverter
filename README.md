@@ -9,7 +9,9 @@ Converts Twiddler3 keyboard configuration files to human readable format and vic
 
 - Allows making groups of similar chord combinations for easier learning
 
+
 Convert Twiddler3 cfg to text file 
+
 powershell -file TwiddlerCfg2Text.ps1 inputfilename outputfilename [HID file name]
 
 Examples:
@@ -24,20 +26,24 @@ powershell -file TwiddlerText2Cfg.ps1 inputfilename outputfilename
 
 Text file format: 
 
-\# 
-Starts a comment
+\# Starts a comment
 
 Single key: 
+
 modifier chords hid_modifier&key character
 
 Example:
+
   AN LLOL 0047 <ScrollLock>
+  
    O ROOO 0004 a
 
 Macro keys: 
+
 modifier chords hid_modifier&key,hid_modifier&key2... character1character2
 
 Example:
+
    O OLOM 000C,0012,0011,002C ion<Space>
 
 Shown characters are fetched from HID key map file. Default file is Us.hid.txt.
