@@ -2,8 +2,11 @@
 Converts Twiddler3 keyboard configuration files to human readable format and vice versa
 
 Faster to create new configurations( from existing ones)
+
 Allows using international charactersets and keyboards
+
 Allows writing comments about design decisions. 
+
 Allows making groups of similar chord combinations for easier learning
 
 Convert Twiddler3 cfg to text file 
