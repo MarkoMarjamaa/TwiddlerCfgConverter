@@ -12,47 +12,54 @@ Converts Twiddler3 keyboard configuration files to human readable format and vic
 
 Convert Twiddler3 cfg to text file 
 
-powershell -file TwiddlerCfg2Text.ps1 inputfilename outputfilename [HID file name]
+`powershell -file TwiddlerCfg2Text.ps1 inputfilename outputfilename [HID file name]`
 
 Examples:
 
-powershell -file TwiddlerCfg2Text.ps1 twiddler_default.cfg twiddler_default.text.cfg
+`powershell -file TwiddlerCfg2Text.ps1 twiddler_default.cfg twiddler_default.text.cfg`
 
-powershell -file TwiddlerCfg2Text.ps1 twiddler_default.cfg twiddler_default.text.cfg Us.hid.txt
+`powershell -file TwiddlerCfg2Text.ps1 twiddler_default.cfg twiddler_default.text.cfg Us.hid.txt`
 
 Convert Twiddler3 text file to cfg file 
 
-powershell -file TwiddlerText2Cfg.ps1 inputfilename outputfilename
+`powershell -file TwiddlerText2Cfg.ps1 inputfilename outputfilename`
 
 Text file format: 
 
-\# Starts a comment
+`\#` Starts a comment
 
 Chord descriptions start with line:
 
+```
 -- Chords --
+```
 
 Single key: 
 
+```
 modifier chords hid_modifier&key character
+```
 
 Example:
-
-  AN LLOL 0047 <ScrollLock>
-  
-   O ROOO 0004 a
-
+```
+AN LLOL 0047 <ScrollLock>
+O ROOO 0004 a
+```
 Macro keys: 
 
+```
 modifier chords hid_modifier&key,hid_modifier&key2... character1character2
+```
 
 Example:
 
-   O OLOM 000C,0012,0011,002C ion<Space>
+```
+O OLOM 000C,0012,0011,002C ion<Space>
+```
 
-Shown characters are fetched from HID key map file. Default file is Us.hid.txt.
+Shown characters are fetched from HID key map file. Default file is `Us.hid.txt`.
 
-Shown characters are only for visualisation, the actual conversion from text file to cfg file is done with hid_modifier&key values. 
+Shown characters are only for visualisation, the actual conversion from text file to cfg file is done with `hid_modifier&key` values. 
 
 HID key map file can be Unicode and output file is always Unicode. 
 
